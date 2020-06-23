@@ -15,14 +15,30 @@ public class signInPage {
         PageFactory.initElements(driver,this);
     }
 
-    public void signInMethod() {
-
-        driver.findElement(By.cssSelector("div.cc-compliance > a")).click();
-        driver.findElement(By.cssSelector("input[placeholder='Username']")).sendKeys("nigeria_tenant_admin");
-        driver.findElement(By.cssSelector("[formcontrolname=\"password\"]")).sendKeys("TnvLOl54WxR75vylop2A");
-        driver.findElement(By.cssSelector("button[aria-label=\"LOGIN\"]")).click();
-    }
+//    public void signInMethod() {
+//
+//        driver.findElement(By.cssSelector("div.cc-compliance > a")).click();
+//        driver.findElement(By.cssSelector("input[placeholder='Username']")).sendKeys("nigeria_tenant_admin");
+//        driver.findElement(By.cssSelector("[formcontrolname=\"password\"]")).sendKeys("TnvLOl54WxR75vylop2A");
+//        driver.findElement(By.cssSelector("button[aria-label=\"LOGIN\"]")).click();
+//    }
     @FindBy(css="input[placeholder='Username']")
     private WebElement inputUserName;
+
+    @FindBy(css="[formcontrolname=\"password\"]")
+    private WebElement inputPassword;
+
+    @FindBy(css="button[aria-label=\"LOGIN\"]")
+    private WebElement buttonLogin;
+
+    public void typeInInputUserName(){
+        inputUserName.sendKeys("nigeria_tenant_admin");
+    }
+    public void typeInInputPassword(){
+        inputPassword.sendKeys("TnvLOl54WxR75vylop2A");
+    }
+    public void clickOnbuttonLogin(){
+        buttonLogin.click();
+    }
 
 }
