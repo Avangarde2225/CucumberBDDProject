@@ -16,11 +16,16 @@ public class leftNav {
     @FindBy(xpath="(//span[text()='Setup'])[1]")
     private WebElement clickOnSetup;
 
-    @FindBy(xpath = "//span[contains(text(),'Parameters')])[1]")
+    @FindBy(xpath = "(//span[contains(text(),'Parameters')])[1]")
     private WebElement clickOnParameters;
 
     @FindBy(xpath = "//span[text()='Countries']")
     private WebElement clickOnCountries;
+
+    @FindBy(xpath = "//span[contains(text(),'Citizenships')]")
+    private WebElement clickOnCitizenship;
+
+
 
     public void clickOnSetup(){
         clickOnSetup.click();
@@ -30,5 +35,9 @@ public class leftNav {
     }
     public void clickOnCountries(){
         clickOnCountries.click();
+    }
+
+    public void clickOnCitizenship(){
+        clickOnCitizenship.click();
     }
 }
