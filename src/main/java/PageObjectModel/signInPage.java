@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 public class signInPage {
-    WebDriver driver;
+    private WebDriver driver;
 
     public signInPage(){
         driver= Driver.getDriver();
@@ -22,6 +22,10 @@ public class signInPage {
 //        driver.findElement(By.cssSelector("[formcontrolname=\"password\"]")).sendKeys("TnvLOl54WxR75vylop2A");
 //        driver.findElement(By.cssSelector("button[aria-label=\"LOGIN\"]")).click();
 //    }
+
+    @FindBy(css="div.cc-compliance > a")
+    private WebElement clickOnCompliance;
+
     @FindBy(css="input[placeholder='Username']")
     private WebElement inputUserName;
 
@@ -30,6 +34,10 @@ public class signInPage {
 
     @FindBy(css="button[aria-label=\"LOGIN\"]")
     private WebElement buttonLogin;
+
+    public void clickOnComplianceButton(){
+        clickOnCompliance.click();
+    }
 
     public void typeInInputUserName(){
         inputUserName.sendKeys("nigeria_tenant_admin");

@@ -24,7 +24,10 @@ public class countrySteps {
 
     @Given("^Type the username and password and click on login button$")
     public void type_the_username_and_password_and_click_on_login_button() throws Throwable {
-        sip.signInMethod();
+        sip.clickOnComplianceButton();
+        sip.typeInInputUserName();
+        sip.typeInInputPassword();
+        sip.clickOnbuttonLogin();
 
     }
 }
