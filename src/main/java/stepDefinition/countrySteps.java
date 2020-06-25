@@ -1,8 +1,12 @@
 package stepDefinition;
 
+import PageObjectModel.applicationPage;
+import PageObjectModel.countryPage;
 import PageObjectModel.leftNav;
 import PageObjectModel.signInPage;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,6 +19,8 @@ public class countrySteps {
     WebDriver driver;
     signInPage sip = new signInPage();
     leftNav lv = new leftNav();
+    countryPage cp = new countryPage();
+    applicationPage ap = new applicationPage();
 
     @Given("^Go to mersys website$")
     public void go_to_mersys_website() throws Throwable {
@@ -34,6 +40,7 @@ public class countrySteps {
         sip.typeInInputPassword();
         sip.clickOnbuttonLogin();
 
+
     }
 
     @Given("^Click on setup$")
@@ -49,5 +56,28 @@ public class countrySteps {
     @Given("^Click on countries$")
     public void click_on_countries() throws Throwable {
      lv.clickOnCountries();
+    }
+
+    @Given("^Click on plus icon$")
+    public void click_on_plus_icon() throws Throwable {
+        ap.clickPlusButton();
+    }
+    @Given("^Type in the Name \"([^\"]*)\"$")
+    public void type_in_the_Name(String name) throws Throwable {
+        cp.countryCreate(name);
+    }
+
+    @Given("^Type in the Code \"([^\"]*)\"$")
+    public void type_in_the_Code(String code) throws Throwable {
+      cp.countryCode(code);
+    }
+    @When("^Click on save button$")
+    public void click_on_save_button() throws Throwable {
+       ap.clickSaveButton();
+    }
+
+    @Then("^\"([^\"]*)\" should be displayed$")
+    public void should_be_displayed(String arg1) throws Throwable {
+
     }
 }

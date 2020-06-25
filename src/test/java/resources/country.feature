@@ -8,3 +8,7 @@ Feature: Create a Country
     And Click on parameters
     And Click on countries
     And Click on plus icon
+    And Type in the Name "Tataristan"
+    And Type in the Code "TT"
+    When Click on save button
+    Then "Tataristan" should be displayed
