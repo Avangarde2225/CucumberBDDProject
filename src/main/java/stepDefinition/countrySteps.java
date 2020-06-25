@@ -21,7 +21,7 @@ public class countrySteps {
         //System.setProperty("webdriver.chrome.driver", "C:\\Users\\suler\\Desktop\\Selenium\\chromedriver\\chromedriver.exe");
         driver = Driver.getDriver();
 
-        driver.get("https://basqar.techno.study/");
+        driver.get("https://test.basqar.mersys.io/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 

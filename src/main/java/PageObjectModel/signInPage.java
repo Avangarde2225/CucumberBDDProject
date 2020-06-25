@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class signInPage {
+public class signInPage extends abstractClass{
     private WebDriver driver;
 
     public signInPage(){
@@ -36,17 +36,17 @@ public class signInPage {
     private WebElement buttonLogin;
 
     public void clickOnComplianceButton(){
-        clickOnCompliance.click();
+        clickFunction(clickOnCompliance);
     }
 
     public void typeInInputUserName(){
-        inputUserName.sendKeys("nigeria_tenant_admin");
+        sendKeys(inputUserName, "admin");
     }
     public void typeInInputPassword(){
-        inputPassword.sendKeys("TnvLOl54WxR75vylop2A");
+        sendKeys(inputPassword,"F4pj8Zsq52mX!");
     }
     public void clickOnbuttonLogin(){
-        buttonLogin.click();
+        clickFunction(buttonLogin);
     }
 
 }

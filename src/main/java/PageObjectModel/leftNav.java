@@ -6,14 +6,15 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class leftNav {
+public class leftNav extends abstractClass {
     private WebDriver driver;
 
-    public leftNav(){
-        driver= Driver.getDriver();
-        PageFactory.initElements(driver,this);
+    public leftNav() {
+        driver = Driver.getDriver();
+        PageFactory.initElements(driver, this);
     }
-    @FindBy(xpath="(//span[text()='Setup'])[1]")
+
+    @FindBy(xpath = "(//span[text()='Setup'])[1]")
     private WebElement clickOnSetup;
 
     @FindBy(xpath = "(//span[contains(text(),'Parameters')])[1]")
@@ -26,18 +27,19 @@ public class leftNav {
     private WebElement clickOnCitizenship;
 
 
-
-    public void clickOnSetup(){
-        clickOnSetup.click();
-    }
-    public void clickOnParameters(){
-        clickOnParameters.click();
-    }
-    public void clickOnCountries(){
-        clickOnCountries.click();
+    public void clickOnSetup() {
+        clickFunction(clickOnSetup);
     }
 
-    public void clickOnCitizenship(){
-        clickOnCitizenship.click();
+    public void clickOnParameters() {
+        clickFunction(clickOnParameters);
+    }
+
+    public void clickOnCountries() {
+        clickFunction(clickOnCountries);
+    }
+
+    public void clickOnCitizenship() {
+        clickFunction(clickOnCitizenship);
     }
 }
