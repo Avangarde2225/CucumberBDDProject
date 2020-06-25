@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.Driver;
 
 import java.util.List;
@@ -14,6 +15,7 @@ public class applicationPage extends abstractClass {
     //frequently used buttons will be stored here
 
     private WebDriver driver;
+
 
     public applicationPage(){
         driver= Driver.getDriver();
@@ -38,5 +40,13 @@ public class applicationPage extends abstractClass {
     })
     private List<WebElement> tableListOfNames;
 
+    public void nameIsCreated(String value){
+        waitUntilVisibilityOf(successfullyCreatedMessage);
+        waitUntilInvisibilityOf(successfullyCreatedMessage);
+        verifyCreated(tableListOfNames, value);
+    }
+
+    @FindBy(xpath="//div[contains(text(), 'successfully created')]")
+    private WebElement successfullyCreatedMessage;
 
 }

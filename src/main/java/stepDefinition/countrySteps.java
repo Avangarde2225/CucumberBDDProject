@@ -77,7 +77,7 @@ public class countrySteps {
     }
 
     @Then("^\"([^\"]*)\" should be displayed$")
-    public void should_be_displayed(String arg1) throws Throwable {
-
+    public void should_be_displayed(String name) throws Throwable {
+     ap.nameIsCreated(name);
     }
 }

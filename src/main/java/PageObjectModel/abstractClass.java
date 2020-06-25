@@ -4,7 +4,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import utilities.Driver;
+
+import java.util.List;
 
 //click and send keys functions
 
@@ -21,6 +24,28 @@ public abstract class abstractClass {
     public void sendKeys(WebElement sendKeysElement, String value){
         wait.until(ExpectedConditions.visibilityOf(sendKeysElement));
         sendKeysElement.sendKeys(value);
+    }
+    public void verifyCreated(List<WebElement> tableList, String value){
+        boolean result = false;
+
+
+        for (int i = 0; i <tableList.size() ; i++) {
+            if(tableList.get(i).getText().equalsIgnoreCase(value)){
+                result = true;
+                break;
+            }
+        }
+        if(result==false){
+            Assert.fail();
+        } else{
+            System.out.println(value + "is displayed");
+        }
+    }
+    public void waitUntilVisibilityOf(WebElement waitElement){
+        wait.until(ExpectedConditions.visibilityOf(waitElement));
+    }
+    public void waitUntilInvisibilityOf(WebElement waitElement){
+        wait.until(ExpectedConditions.invisibilityOf(waitElement));
     }
 
 }
