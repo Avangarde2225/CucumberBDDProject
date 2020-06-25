@@ -23,7 +23,7 @@ public class citizenshipPage extends abstractClass{
     public void typeInTheInputCitizenName(String name){
         sendKeys(inputCitizenName, name);
     }
-    public void typeInTheInputShortName(String name){
-        sendKeys(inputShortName, name);
+    public void typeInTheInputShortName(String shortName){
+        sendKeys(inputShortName, shortName);
     }
 }
