@@ -65,5 +65,21 @@ public abstract class abstractClass {
             }
         }
     }
+    public void verifyDeletedInAbstractClass(List<WebElement> tableList, String value) {
+        boolean result = false;
+
+
+        for (int i = 0; i <tableList.size() ; i++) {
+            if(tableList.get(i).getText().equalsIgnoreCase(value)){
+                result = true;
+                break;
+            }
+        }
+        if(result==true){
+            Assert.fail();
+        } else{
+            System.out.println(value + "is displayed");
+        }
+    }
 
 }

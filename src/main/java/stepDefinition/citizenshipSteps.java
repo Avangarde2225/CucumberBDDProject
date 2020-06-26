@@ -34,7 +34,7 @@ public class citizenshipSteps {
     }
 
     @Then("^Verify data is removed \"([^\"]*)\"$")
-    public void verify_data_is_removed(String arg1) throws Throwable {
-
+    public void verify_data_is_removed(String name) throws Throwable {
+        ap.verifyingDeleted(name);
     }
 }
