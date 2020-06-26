@@ -10,7 +10,7 @@ public class discountSteps {
 
     @Given("^Click on Discount$")
     public void click_on_Discount() throws Throwable {
-
+        lv.clickOnDiscounts();
     }
 
     @Given("^Type in the Description \"([^\"]*)\"$")
