@@ -41,11 +41,28 @@ public abstract class abstractClass {
             System.out.println(value + "is displayed");
         }
     }
-    public void waitUntilVisibilityOf(WebElement waitElement){
-        wait.until(ExpectedConditions.visibilityOf(waitElement));
+    public void waitUntilVisibilityOf(WebElement waitElement) {
+        try {
+            wait.until(ExpectedConditions.visibilityOf(waitElement));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
+
     public void waitUntilInvisibilityOf(WebElement waitElement){
-        wait.until(ExpectedConditions.invisibilityOf(waitElement));
+        try{
+            wait.until(ExpectedConditions.invisibilityOf(waitElement));
+        } catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    public void deleteFunctionality(List<WebElement> name, List<WebElement> deleteButton, String value){
+        for (int i = 0; i <name.size() ; i++) {
+            if(name.get(i).getText().equalsIgnoreCase(value)){
+                clickFunction(deleteButton.get(i));
+
+            }
+        }
     }
 
 }
