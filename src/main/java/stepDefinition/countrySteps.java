@@ -11,6 +11,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import utilities.Driver;
+import utilities.ReadProperties;
 
 import java.util.concurrent.TimeUnit;
 
@@ -27,7 +28,7 @@ public class countrySteps {
         //System.setProperty("webdriver.chrome.driver", "C:\\Users\\suler\\Desktop\\Selenium\\chromedriver\\chromedriver.exe");
         driver = Driver.getDriver();
 
-        driver.get("https://test.basqar.mersys.io/");
+        driver.get(ReadProperties.getData("URL"));
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 

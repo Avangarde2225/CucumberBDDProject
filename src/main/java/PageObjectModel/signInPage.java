@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
+import utilities.ReadProperties;
 
 public class signInPage extends abstractClass{
     private WebDriver driver;
@@ -40,11 +41,12 @@ public class signInPage extends abstractClass{
     }
 
     public void typeInInputUserName(){
-        sendKeys(inputUserName, "admin");
+        sendKeys(inputUserName, ReadProperties.getData("Username"));
     }
     public void typeInInputPassword(){
-        sendKeys(inputPassword,"F4pj8Zsq52mX!");
+        sendKeys(inputPassword,ReadProperties.getData("Password"));
     }
+
     public void clickOnbuttonLogin(){
         clickFunction(buttonLogin);
     }
