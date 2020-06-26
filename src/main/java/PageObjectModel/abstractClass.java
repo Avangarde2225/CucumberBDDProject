@@ -8,6 +8,7 @@ import org.testng.Assert;
 import utilities.Driver;
 
 import java.util.List;
+import java.util.Random;
 
 //click and send keys functions
 
@@ -78,8 +79,21 @@ public abstract class abstractClass {
         if(result==true){
             Assert.fail();
         } else{
-            System.out.println(value + "is displayed");
+            System.out.println(value + "is not displayed");
         }
+    }
+    public void handleCountriesDropDown(WebElement dropdown, List<WebElement> dropdownOptions){
+        clickFunction(dropdown);
+
+        int randomNum = randomGenerator(dropdownOptions.size());
+
+        clickFunction(dropdownOptions.get(randomNum));
+
+    }
+    public int randomGenerator(int max){
+        Random rnd = new Random();
+        int randomNumber = rnd.nextInt(max);
+        return randomNumber;
     }
 
 }

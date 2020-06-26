@@ -29,6 +29,12 @@ public class leftNav extends abstractClass {
     @FindBy(xpath = "//span[contains(text(),'Nationalities')]")
     private WebElement clickOnNationality;
 
+    @FindBy(xpath = "//span[text()='Subject Categories']")
+    private WebElement clickOnSubjectCategories;
+
+    @FindBy(xpath = "//span[contains(text(),'Cities')]")
+    private WebElement clickOnCities;
+
     public void clickOnSetup() {
         clickFunction(clickOnSetup);
     }
@@ -44,8 +50,17 @@ public class leftNav extends abstractClass {
     public void clickOnCitizenship() {
         clickFunction(clickOnCitizenship);
     }
-
-    public void ClickOnNationality(){
+    public void clickOnNationality() {
         clickFunction(clickOnNationality);
     }
+
+    public void clickOnSubjectCategories(){
+        clickFunction(clickOnSubjectCategories);
+    }
+
+    public void clickOnCities(){
+        clickFunction(clickOnCities);
+    }
+
+
 }

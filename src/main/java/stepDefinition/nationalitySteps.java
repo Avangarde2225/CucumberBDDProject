@@ -12,6 +12,6 @@ public class nationalitySteps {
 
     @Given("^Click on Nationality$")
     public void click_on_Nationality() throws Throwable {
-    lv.ClickOnNationality();
+    lv.clickOnNationality();
     }
 }
