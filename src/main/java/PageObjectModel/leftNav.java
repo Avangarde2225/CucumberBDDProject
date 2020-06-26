@@ -14,6 +14,9 @@ public class leftNav extends abstractClass {
         PageFactory.initElements(driver, this);
     }
 
+    @FindBy(xpath="//span[text()='Discounts']")
+    private WebElement discounts;
+
     @FindBy(xpath = "(//span[text()='Setup'])[1]")
     private WebElement clickOnSetup;
 
@@ -61,6 +64,8 @@ public class leftNav extends abstractClass {
     public void clickOnCities(){
         clickFunction(clickOnCities);
     }
+
+    public void clickOnDiscounts(){ clickFunction(discounts); }
 
 
 }
