@@ -11,3 +11,5 @@ Feature: Create Citizenship
     And Type in the shortname "Tat"
     When Click on save button
     Then "Tataris" should be displayed
+    And Remove the data "Tataris"
+    Then Verify data is removed "Tataris"

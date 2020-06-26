@@ -35,6 +35,13 @@ public class applicationPage extends abstractClass {
         clickFunction(saveButton);
     }
 
+    @FindBy(xpath = "//span[text()=' Yes ']")
+    private WebElement yes;
+
+    public void clickOnYes(){
+        clickFunction(yes);
+    }
+
     @FindAll({
             @FindBy(xpath="//tbody//tr//td[2]")
     })
@@ -48,5 +55,15 @@ public class applicationPage extends abstractClass {
 
     @FindBy(xpath="//div[contains(text(), 'successfully created')]")
     private WebElement successfullyCreatedMessage;
+
+    @FindAll({
+            @FindBy(xpath = "//ms-delete-button//button")
+    })
+
+    private List<WebElement> listOfDeleteButtons;
+
+    public void deletingDeleteButtons(String value){
+        deleteFunctionality(tableListOfNames, listOfDeleteButtons, yes,value );
+    }
 
 }

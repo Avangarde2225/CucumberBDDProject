@@ -56,10 +56,11 @@ public abstract class abstractClass {
             System.out.println(e.getMessage());
         }
     }
-    public void deleteFunctionality(List<WebElement> name, List<WebElement> deleteButton, String value){
+    public void deleteFunctionality(List<WebElement> name, List<WebElement> deleteButton, WebElement yes,String value){
         for (int i = 0; i <name.size() ; i++) {
             if(name.get(i).getText().equalsIgnoreCase(value)){
                 clickFunction(deleteButton.get(i));
+                clickFunction(yes);
 
             }
         }

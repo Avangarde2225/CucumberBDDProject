@@ -14,7 +14,7 @@ public class citizenshipPage extends abstractClass{
         PageFactory.initElements(driver,this);
     }
 
-    @FindBy(xpath="(//ms-text-field[@placeholder=\"GENERAL.FIELD.NAME\"])[1]")
+    @FindBy(xpath="(//ms-text-field[@placeholder=\"GENERAL.FIELD.NAME\"])[2]")
     private WebElement inputCitizenName;
 
     @FindBy(xpath="(//ms-text-field[@placeholder=\"GENERAL.FIELD.SHORTNAME\"])[1]")
