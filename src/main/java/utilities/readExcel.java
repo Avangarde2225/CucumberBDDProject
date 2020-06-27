@@ -5,7 +5,7 @@ import org.apache.poi.ss.usermodel.*;
 import java.io.FileInputStream;
 
 public class readExcel {
-    public static String getData(String excelPath, String sheetName) {
+    public static String getData(String excelPath, String sheetName, String whichRow) {
 
         String path = ReadProperties.getData(excelPath);
 
@@ -13,19 +13,19 @@ public class readExcel {
 
         try {
             instream = new FileInputStream(path);
-        } catch(Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
         Workbook workbook = null;
 
-        try{
+        try {
             workbook = WorkbookFactory.create(instream);
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
-        Sheet sheet  = workbook.getSheet(sheetName);
+        Sheet sheet = workbook.getSheet(sheetName);
 
         Row row;
 
@@ -34,7 +34,21 @@ public class readExcel {
         int maxRow = sheet.getPhysicalNumberOfRows();
         System.out.println(maxRow);
 
-        return "a";
+        for (int i = 0; i < maxRow; i++) {
+            row = sheet.getRow(i);
+
+            int cellCount  = row.getLastCellNum();
+
+            System.out.println(cellCount);
+
+            cell = row.getCell(0);
+
+            if(cell.equals(whichRow)){
+
+            }
+        }
+
+        return "";
     }
 
 }
