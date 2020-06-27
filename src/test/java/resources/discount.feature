@@ -1,5 +1,5 @@
 Feature: Create a Discount
-
+@RegressionTest
   Scenario Outline: Discount Creation
 
     Given Go to mersys website
