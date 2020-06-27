@@ -1,18 +1,38 @@
 package utilities;
 
+import org.apache.poi.ss.usermodel.*;
+
 import java.io.FileInputStream;
 
 public class readExcel {
-    public String getData(String excelPath) {
+    public static String getData(String excelPath, String sheetName) {
 
         String path = ReadProperties.getData(excelPath);
 
+        FileInputStream instream = null;
+
         try {
-            FileInputStream instream = new FileInputStream(path);
+            instream = new FileInputStream(path);
         } catch(Exception e){
             System.out.println(e.getMessage());
         }
 
+        Workbook workbook = null;
+
+        try{
+            workbook = WorkbookFactory.create(instream);
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
+        Sheet sheet  = workbook.getSheet(sheetName);
+
+        Row row;
+
+        Cell cell;
+
+        int maxRow = sheet.getPhysicalNumberOfRows();
+        System.out.println(maxRow);
 
         return "a";
     }
